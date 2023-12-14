@@ -168,9 +168,9 @@ screens = [
                 widget.Clock(format="%d %a %I:%M %p"),
             ],
             24,
-            border_width=[5, 5, 5, 5],  # Draw top and bottom borders
+            border_width=[5, 5, 5, 5], 
             opacity=.85,
-            margin=[10,5,10,5],
+            margin=[10,5,2,5],
             #border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
         

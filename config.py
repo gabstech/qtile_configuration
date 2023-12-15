@@ -38,18 +38,29 @@ wallpaper_path = '~/Pictures/Wallpapers/house_j.jpg'
 
 #colores
 colors = {
-    'bar': '#1A1A1A',                # Barra superior
-    'text': '#FFFFFF',               # Texto en la barra
-    'background': '#282828',         # Fondo de ventana activa
-    'border_focus': '#5588A3',       # Bordes de ventana activa
-    'border_normal': '#1E1E1E',      # Ventana inactiva
-    'urgent_notification': '#FFA500',# Notificaciones urgentes
-    'accent': '#FF4500',             # Acento vibrante
-    'contrast': '#6E6E6E',           # Contraste sutil
-    'neutral': '#F5F5F5',            # Toque neutro
-    'elegance': '#450B65'            # Elegancia adicional
+    'Negro': "#1A1A1A",                  # Barra superior
+    'Blanco': "#FFFFFF",                 # Texto en la barra
+    'Gris_oscuro': "#282828",            # Fondo de ventana activa
+    'Azul_verdoso': "#5588A3",           # Bordes de ventana activa
+    'Gris_oscuro_ventana': "#1E1E1E",    # Ventana inactiva
+    'Naranja': "#FFA500",                # Notificaciones urgentes
+    'Rojo_anaranjado': "#FF4500",        # Acento vibrante
+    'Gris_medio': "#6E6E6E",             # Contraste sutil
+    'Blanco_ahumado': "#F5F5F5",         # Toque neutro
+    'Morado_oscuro': "#450B65"           # Elegancia adicional
 }
 
+# Ejemplo de uso
+color_barra_superior = colors["Negro"]
+color_texto_barra = colors["Blanco"]
+color_fondo_ventana_activa = colors["Gris_oscuro"]
+color_bordes_ventana_activa = colors["Azul_verdoso"]
+color_ventana_inactiva = colors["Gris_oscuro_ventana"]
+color_notificaciones_urgentes = colors["Naranja"]
+color_acento_vibrante = colors["Rojo_anaranjado"]
+color_contraste_sutil = colors["Gris_medio"]
+color_toque_neutro = colors["Blanco_ahumado"]
+color_elegancia_adicional = colors["Morado_oscuro"]
 
 
 keys = [
@@ -127,13 +138,20 @@ for i in groups:
     )
 
 
+basic_configs = {
+        "margin" : 7,
+        }
 
-
+configs_columns = {
+        "border_focus": 'color_acento_vibrante',
+        "border_focus_stack" : '#ffffffff',
+        "border_width" : 4,
+        }
 
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4,margin=5),
-    layout.Max(), 
+    layout.Columns(**configs_columns,**basic_configs),
+    layout.Max(**basic_configs),
 ]
 
 widget_defaults = dict(
@@ -171,7 +189,6 @@ screens = [
             border_width=[5, 5, 5, 5], 
             opacity=.85,
             margin=[10,5,2,5],
-            #border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
         
 

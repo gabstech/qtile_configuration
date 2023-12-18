@@ -35,6 +35,7 @@ from libqtile.utils import guess_terminal
 mod = "mod4"
 terminal = guess_terminal()
 wallpaper_path = '~/Pictures/Wallpapers/house_j.jpg'
+script_directorio = '/home/gabstech/.config/qtile/sc_current_dir.sh'
 
 #colores
 colors = {
@@ -95,7 +96,12 @@ keys = [
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    #Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    #Linea de codigo para abrir terminal por medio de un script para estar en el directorio anterior
+    Key([mod], "Return", lazy.spawn(script_directorio), desc="Launch terminal"),
+
+
+
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),

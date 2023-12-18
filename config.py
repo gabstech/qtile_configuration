@@ -97,6 +97,9 @@ keys = [
         desc="Toggle between split and unsplit sides of stack",
     ),
     #Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    
+
+
     #Linea de codigo para abrir terminal por medio de un script para estar en el directorio anterior
     Key([mod], "Return", lazy.spawn(script_directorio), desc="Launch terminal"),
 

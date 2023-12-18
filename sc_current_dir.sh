@@ -12,5 +12,5 @@ current_dir="${window_title##*:}"
 
 
 # Abre una nueva terminal en el directorio actual
-gnome-terminal -- bash -c "cd '$current_dir'; exec bash"
+xfce4-terminal -- bash -c "cd '$current_dir'; exec bash"
 
